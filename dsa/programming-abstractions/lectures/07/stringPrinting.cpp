@@ -19,11 +19,29 @@ void printString(string s)
     printString(s.substr(1, s.length() - 1))
 }
 
+// simply swap the order of our cout and printStringReverse() lines in the original 
+// recursive function, and let the program stack take care of reversing the string for us:
+void printStringReverse(string s)
+{
+    if (s.length() == 0)
+    {
+        cout << endl;  // This is problematic.
+        return;
+    }
+
+    printStringReverse(s.substr(1));
+    cout << s[0];
+
+}
+
 int main()
 {
     // Calling twice to ensure proper placement of line break in output.
     printString("hello");
     printString("hello");
+
+    printStringReverse("hello");
+    printStringReverse("hello");
 
     return 0;
 }
