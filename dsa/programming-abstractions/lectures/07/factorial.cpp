@@ -2,7 +2,8 @@
 #include "console.h"
 using namespace std;
 
-int factorial(int n)
+// for n > 0, n! has at least one other factorial embedded in it: (n - 1)!.
+int factorial(unsigned int n)
 {
     if (n == 0)
     {
