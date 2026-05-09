@@ -71,3 +71,17 @@ int main()
     cout << "Bye!" << endl;
     return 0;
 }
+
+/*
+
+Binary Search Runtime (and a Reminder of the Awesomeness of Logarithmic Runtimes!)
+
+Notice that with each O(1) comparison to the midpoint of our remaining search space, binary search cuts 
+our search space in half. This repeated halving of our search space matches the pattern we saw for 
+logarithmic runtimes in our lecture on Big-O. Indeed, the worst-case runtime for binary search is 
+O(log n). The best-case runtime is O(1), where the key we're searching for is at the very middle of 
+the vector and is therefore the first element we examine.
+
+LOG RUNTIMES ARE AMAZING!!!
+
+*/
