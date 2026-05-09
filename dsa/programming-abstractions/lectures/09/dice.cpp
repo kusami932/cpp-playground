@@ -1,3 +1,10 @@
+#include <iostream>
+#include "console.h"
+#include "strlib.h"
+using namespace std;
+
+// Transform the two recursive calls from the coinFlip() function 
+// into a series of six recursive calls for our dice.
 void rollDice(string soFar, int n)
     {
     if (n == 0)
@@ -6,13 +13,12 @@ void rollDice(string soFar, int n)
         return;
     }
 
-    // NOT GREAT
-    rollDice(soFar + "1", n - 1);
-    rollDice(soFar + "2", n - 1);
-    rollDice(soFar + "3", n - 1);
-    rollDice(soFar + "4", n - 1);
-    rollDice(soFar + "5", n - 1);
-    rollDice(soFar + "6", n - 1);
+   for (int i = 1; i <= 6; i++)
+   {
+        // cleaned up by rolling the recursive calls into a for-loop, 
+        // which requires us to convert the looping integer to a string
+        rollDice(soFar + integerToString(i) + " ", n - 1);
+   }
 }
 
 void rollDice(int n)
@@ -20,4 +26,7 @@ void rollDice(int n)
     rollDice("", n);
 }
 
+int main()
+{
 
+}
