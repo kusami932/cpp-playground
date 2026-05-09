@@ -42,3 +42,17 @@ int main()
     coinFlip(3);
     return 0;
 }
+
+/*
+
+Q: What is the Big-O runtime for coinflip?
+
+This is a bit tricky. Since each recursive call spawns to more recursive calls 
+until we hit our base cases, it might look like this function's runtime is O(2n) 
+("exponential"). It's actually worse than that, though, because we are passing 
+strings by value -- meaning that we create an entirely new copy of our string 
+with each recursive call -- and those strings keep getting longer and longer. 
+The runtime ends up being O(n2n). I am bringing this up mostly to ensure that 
+if anyone was looking at that function today and thinking it was O(2n), they 
+won't continue to hold to that incorrect notion and ignore the cost of those string copies.
+*/
