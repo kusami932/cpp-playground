@@ -21,6 +21,43 @@ Vector<int> createRandomVector(int n)
     return v;
 }
 
+// Creates and returns a vector of n random integers on the range 0 through
+// 100 (inclusive). Assumes n is non-negative.
+Vector<int> createSortedRandoVector1(int n)
+{
+    Vector<int> v;
+
+    for (int i = 0; i < n; i++)
+    {
+        v.add(randomInteger(0, 100));
+    }
+
+    v.sort();
+    return v;
+}
+
+// Creates and returns a vector of n random integers on the range 0 through
+// 100 (inclusive). Assumes n is positive.
+Vector<int> createSortedRandoVector2(int n)
+{
+    Vector<int> v;
+
+    // This assumes n > 0, and so we actually want to add at least one element to
+    // our vector. We could check manually whether n were <= 0 (and nope out of this
+    // function if so), but I am just assuming n > 0 here for simplicity.
+    v.add(randomInteger(0, 10));
+
+    for (int i = 1; i < n; i++)
+    {
+        // By adding a non-negative integer to the value stored in the previous cell,
+        // we ensure this cell gets a value greater than or equal to the previous one.
+        // Thus, our vector ends up sorted.
+        v.add(v[i - 1] + randomInteger(0, 10));
+    }
+
+    return v;
+}
+
 // Takes a vector of integers and some key to search for. Returns the first index
 // where key occurs, or -1 if key is not present. Passing vector by reference for
 // efficiency.
