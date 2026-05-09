@@ -32,6 +32,12 @@ int binarySearch(Vector<int>& v, int key, int lo, int hi)
 }
 
 // Wrapper function for binary search. This is the one our client would call.
+
+/* Function overloading is where we give multiple functions the same name and allow C++ 
+to determine which one to call based on the number and types of parameters we're passing 
+to the function. This streamlines our code somewhat by freeing us from the need to clutter 
+and elongate the names of our helper functions.
+*/
 int binarySearch(Vector<int>& v, int key)
 {
     return binarySearch(v, key, 0, v.size() - 1);
