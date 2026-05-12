@@ -50,3 +50,17 @@ Map<string, Set<string> > friendList(string filename)
     return friends;
 
 }
+
+/*
+b. Finding common friends
+Write a function named mutualFriends that takes in the friendList above, and two strings representing two friends, 
+and returns the names of the mutual friends they have in common. For example, if the friendList is 
+{"Abby":{"Barney", "Clyde"}, "Barney":{"Abby"}, "Clyde":{"Abby"}} and friend1 is Barney and friend2 is Clyde, 
+then your function should return {"Abby"}
+*/
+
+Set<string> mutualFriends(Map<string, Set<string> >& friendList,
+                string friend1, string friend2)
+{
+    return friendList[friend1] * friendList[friend2];
+}
