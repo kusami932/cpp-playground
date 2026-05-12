@@ -39,3 +39,66 @@ int maxRow2(Grid<int>& grid, GridLocation loc)
     }
     return max;
 }
+
+/*
+b. Average value
+Write a function named avgNeighborhood that takes a grid and a grid location and returns the average of 
+all the values in the neighborhood of the grid location. A neighborhood is defined as all cells in a grid 
+that border the grid location in all four directions(N, S, E, W). If the average is not an integer, 
+return a truncated average.
+*/
+
+// solution1 (we put the 4 locations in a Vector and loop over them)
+int avgNeighborhood(Grid<int>& grid, GridLocation loc)
+{
+    Vector<GridLocation> possibleLocations = {
+        {loc.row - 1, loc.col}, // North
+        {loc.row + 1, loc.col}, // south
+        {loc.row, loc.col + 1}, // east
+        {loc.row, loc.col - 1}  // west
+    };
+
+    int sum = 0;
+    int numValidLocations = 0;
+    for (GridLocation dir : possibleLocations)
+    {
+        if(grid.inBounds(dir))
+        {
+            sum += grid[dir];
+            numValidLocations += 1;
+        }
+    }
+    return sum / numValidLocations;
+}
+
+// solution2 (Don't do this please!! We manually get all 4 locations and sum them up)
+int avgNeighborhood(Grid<int>& grid, GridLocation loc) {
+    int sum = 0;
+    int numValidLocations = 0;
+
+    GridLocation north {loc.row - 1, loc.col};
+    if (grid.inBounds(north)) {
+        sum += grid[north];
+        numValidLocations += 1;
+    }
+
+    GridLocation south {loc.row + 1, loc.col};
+    if (grid.inBounds(south)) {
+        sum += grid[south];
+        numValidLocations += 1;
+    }
+
+    GridLocation east {loc.row, loc.col + 1};
+    if (grid.inBounds(east)) {
+        sum += grid[east];
+        numValidLocations += 1;
+    }
+
+    GridLocation west {loc.row, loc.col - 1};
+    if (grid.inBounds(west)) {
+        sum += grid[west];
+        numValidLocations += 1;
+    }
+
+    return sum / numValidLocations;
+}
