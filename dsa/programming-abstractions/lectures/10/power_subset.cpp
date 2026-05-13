@@ -26,12 +26,12 @@ void fancyPrint(string s)
 // 'soFar' is the (sub)set we have built so far. 'rest' contains the elements about
 // which we have yet to make our binary choice (either include or throw away as we
 // generate all possible subsets).
-void printSubsets(string soFar, string rest)
+int printSubsets(string soFar, string rest)
 {
     if(rest.isEmpty())
     {
         fancyPrint(soFar);
-        return;
+        return 1;
     }
 
     // Pluck an element from our set of remaining elements ('rest'). Below, we will
@@ -41,22 +41,20 @@ void printSubsets(string soFar, string rest)
     string newRest = rest.substr(1);
 
     // This is the recursive call where we simply discard thisOne.
-    printSubsets(soFar, newRest);
-
-    // This is the recursive call where we include thisOne in our new subset.
-    printSubsets(soFar + thisOne, newRest);
+    return printSubsets(soFar, newRest) +
+           printSubsets(soFar + thisOne, newRest);
 }
 
 // For simplicity, we represent our sets as strings. Each character is considered
 // an element. For example, the set {a, b, c} is represented as the string "abc".
-void printSubsets(string s)
+int printSubsets(string s)
 {
-    printSubsets("", s);
+    return printSubsets("", s);
 }
 
 int main()
 {
-    printSubsets("abc");
+    cout << printSubsets("abc") << endl;
     return 0;
 }
 
