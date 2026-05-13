@@ -56,3 +56,16 @@ int knapsack(Vector<treasureT>& treasures, int capacity)
     // valueSoFar (the third parameter below) is 0 (zero).
     return knapsack(treasures, capacity, 0);
 }
+
+/*
+Best- and Worst-Case Runtimes for Recursive Knapsack Solutions
+
+In the worst case, every item is light enough to add to our knapsack in every recursive call we make, and so each call 
+(aside from our base case) spawns two more recursive calls, leading to an exponential runtime, O(2n) 
+(where n is the size of our original vector of treasures). In the best case, every item is too heavy to add 
+to our knapsack, and so each call we make (aside from our base case) spawns only one recursive call, leading to a linear runtime, O(n).
+
+Better efficiency algorithms: memoization and iterative dynamic programming
+    Applied to the recursive algorithms above to eliminate redundant recursive calls and drastically improve the worst-case runtime.
+
+*/
