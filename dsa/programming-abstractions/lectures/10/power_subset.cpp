@@ -59,3 +59,29 @@ int main()
     printSubsets("abc");
     return 0;
 }
+
+/*
+Efficiency of printSubsets()
+
+Because we are creating new strings to pass by value to each of our recursive function calls, there is some unnecessary slowness 
+inherent to our printSubsets() function. One might be inclined to ignore those operations as trivial in a less explosive function, 
+but here those slow concatenation and string copying operations are happening within the context of an exponential algorithm! 
+When dealing with a function that makes O(2n) recursive calls, the runtime impact from each of those calls being O(n) instead of 
+O(1) can become non-trivial very quickly as n increases.
+
+=> Pass-by-value leads to slower runtime 
+
+There is, however, an important trade-off at play here. The code above is perhaps more straightforward and followable than an 
+approach that operates on a pass-by-reference vector. The pass-by-reference approach would require some extra bookkeeping: 
+after returning from the recursive call where thisOne was added to soFar, we would have to remove that element from the vector. 
+There would also likely be a third function parameter to keep track of: an integer that tells us how far along we are in the 
+original set passed to the function (since we likely would not modify that one within our recursive calls and would instead 
+focus only on modifying soFar).
+
+=> Pass-by-reference leads to unnecessary complications
+
+Those added layers of complexity might complicate the example unnecessarily and make it less followable in class, and so we 
+have avoided them to make the code more approachable. However, it's good to be aware of these trade-offs -- especially before 
+heading into a technical interview, where the efficiency hits from the pass-by-value parameters and string creation operations 
+could become a topic of discussion.
+*/
