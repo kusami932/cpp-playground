@@ -82,3 +82,12 @@ int main()
 
     return 0;
 }
+
+/*
+Notice that our first approach to isPartitionable returns true as soon as it finds a solution and halts any further exploration! 
+This is a common backtracking idiom that you must be familiar with. 
+
+Note also that the second approach to isPartitionable -- the one that keeps track of the vector contents and not just the sums -- 
+does not benefit from this early termination. If making one recursive call, it always makes the second recursive call, as well. 
+Modifying this function to avoid making that second call unnecessarily is one of today's exam prep questions.
+*/
