@@ -19,8 +19,10 @@ int main()
 
     for (Quokka q : v)
     {
-        q.printInfo();
+        q.renderProfile();
     }
+
+    return 0; // When we return, all our Quokka objects will be deconstructed!
 }
 
 /*

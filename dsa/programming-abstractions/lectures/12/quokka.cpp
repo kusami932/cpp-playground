@@ -1,4 +1,5 @@
 #include <iostream>
+#include "geocities.h"
 #include "lexicon.h"
 #include "quokka.h"
 #include "strlib.h"
@@ -19,6 +20,11 @@ Quokka::Quokka(string name, int howAdorable, string profilePic)
     // Quokkas are only found (natively) in Australia, so passing this location
     // as a parameter isn't necessary.
     _location = "Australia";
+}
+
+Quokka::~Quokka()
+{
+    cout << "R.I.P. " << _name << endl;
 }
 
 string Quokka::getName()
@@ -68,5 +74,12 @@ void Quokka::printInfo()
 bool Quokka::haveASnack(string snack)
 {
     return true;
+}
+
+void Quokka::renderProfile()
+{
+    // The keyword 'this' refers to the object we're inside right now -- the
+    // object from which we called .renderProfile(), which exists back in main().
+    renderGeocitiesPage(this);
 }
 

@@ -9,14 +9,17 @@ class Quokka
         // member functions (which govern behaviors an object can perform)
         Quokka();
         Quokka(std::string name, int howAdorable, std::string profilePic);
-        bool haveASnack(std::string snack);
+        ~Quokka();
 
+        bool haveASnack(std::string snack);
         void printInfo();
+
         std::string getName();
         void setName(std::string name);
         int howAdorable();
         std::string location();
         std::string profilePic();
+        void renderProfile();
 
     private:
         // member variables (which govern the state of an object)
