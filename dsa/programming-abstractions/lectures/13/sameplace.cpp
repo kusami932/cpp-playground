@@ -18,7 +18,21 @@ bool samePlace(int *p, int *q)
     return p == q;
 }
 
-PROVIDED_TEST("simple samePlace test")
+// Write a pass-by-pointer function named sameValue() that takes two integer pointers 
+// and determines whether those are pointers to the same value in memory. 
+// If so, return true. Otherwise, return false
+bool sameValue(int *p, int *q)
+{
+    // We must dereference both q and p to determine     
+    // whether they point to the same value. It is       
+    // possible for them both to point to the same value 
+    // even if they point to different addresses in      
+    // memory (as seen in the test case above where      
+    // sameValue(&a, &b) is expected to return true.     
+    return *p == *q;
+}
+
+PROVIDED_TEST("simple samePlace and sameValue test")
 {
     int a = 11;
     int b = 11;
@@ -26,6 +40,9 @@ PROVIDED_TEST("simple samePlace test")
 
     EXPECT_EQUAL(samePlace(&a, &b), false);
     EXPECT_EQUAL(samePlace(&b, &b), true);
+    EXPECT_EQUAL(sameValue(&a, &b), true);
+    EXPECT_EQUAL(sameValue(&b, &b), true);
+    EXPECT_EQUAL(sameValue(&b, &c), false);
 }
 
 int main()
