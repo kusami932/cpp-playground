@@ -10,6 +10,8 @@ int main()
    Quokka q1("Muffinface", 5, "muffinface.jpg");
    Quokka q2("Hemmy", 4, "hemmy.jpg");
 
+   q2.setName("Confevecake");
+
     q1.printInfo();
     q2.printInfo();
 

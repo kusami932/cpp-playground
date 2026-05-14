@@ -10,8 +10,15 @@ class Quokka
         Quokka();
         Quokka(std::string name, int howAdorable, std::string profilePic);
         bool haveASnack(std::string snack);
-        void printInfo(); 
 
+        void printInfo();
+        std::string getName();
+        void setName(std::string name);
+        int howAdorable();
+        std::string location();
+        std::string profilePic();
+
+    private:
         // member variables (which govern the state of an object)
         std::string _name;
         int _howAdorable;
