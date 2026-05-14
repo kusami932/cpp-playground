@@ -1,21 +1,26 @@
 #include <iostream>
 #include "console.h"
-#include "quokka.h"  // for Quokka class
+#include "quokka.h"
+#include "vector.h"  // for Quokka class
 using namespace std;
 
 int main()
 {
-    // These now call our overloaded constructor!
-   // This is so much more compact and readable!
-   Quokka q1("Muffinface", 5, "muffinface.jpg");
-   Quokka q2("Hemmy", 4, "hemmy.jpg");
+    // Yes, we can create a vector of Quokka objects!
+    Vector<Quokka> v;
 
-   q2.setName("Confevecake");
+    v.add(Quokka("Muffinface", 5, "muffinface.jpg"));
+    v.add(Quokka("Hemmy", 4, "hemmy.jpg"));
+    v.add(Quokka("Percival", 5, "percival.jpg"));
+    v.add(Quokka("Fred", 5, "04.jpg"));
+    v.add(Quokka("Lovelace", 5, "05.jpg"));
+    v.add(Quokka("Night Terror", 5, "06.jpg"));
+    v.add(Quokka("Glen", 5, "07.jpg"));
 
-    q1.printInfo();
-    q2.printInfo();
-
-    return 0;
+    for (Quokka q : v)
+    {
+        q.printInfo();
+    }
 }
 
 /*
