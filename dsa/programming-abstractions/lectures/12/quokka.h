@@ -8,6 +8,7 @@ class Quokka
     public:
         // member functions (which govern behaviors an object can perform)
         Quokka();
+        Quokka(std::string name, int howAdorable, std::string profilePic);
         bool haveASnack(std::string snack);
         void printInfo(); 
 
@@ -15,6 +16,7 @@ class Quokka
         std::string _name;
         int _howAdorable;
         std::string _location;
+        std::string _profilePic;
 
 };
 
