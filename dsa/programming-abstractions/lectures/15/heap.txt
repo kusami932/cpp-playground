@@ -1,0 +1,23 @@
+트리
+	이진 트리
+		이진 탐색 트리
+			자가 균형 BST
+				AVL-Tree
+				레드-블랙 트리
+		스레드 이진 트리
+		힙 트리		
+	B-Tree
+	2-3-4 Tree
+	B+ Tree
+	Trie
+
+Things to implement
+Minheap
+	enQueue (insert, add) -> percolateUp()
+	deQueue (delete, deleteMin) -> percolateDown()
+	peek (findMin, getMin)
+Priority Queue
+Heapsort
+Heapify
+Maxheaps
+
