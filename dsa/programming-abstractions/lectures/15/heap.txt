@@ -21,3 +21,6 @@ Heapsort
 Heapify
 Maxheaps
 
+https://namu.wiki/w/%ED%9E%99%20%ED%8A%B8%EB%A6%AC
+https://kayuse88.github.io/binary-heap/
+https://en.wikipedia.org/wiki/Stirling%27s_approximation
