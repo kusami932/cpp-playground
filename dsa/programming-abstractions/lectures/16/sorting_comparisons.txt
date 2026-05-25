@@ -1,0 +1,42 @@
+Comparison-Heavy vs. Swap-Heavy
+
+Moving refrigerators: if we want to sort a bunch of refrigerators in a warehouse 
+and line them up from lowest price to highest price, the comparison is really easy, 
+but the actual movement is very costly.
+
+Fastest runner: if we want to figure out who is the fastest runner within a group 
+of people by having individuals race one another, the actual comparison is costly 
+and exhausting for the runners involved, but swapping two people in rank is very easy in comparison.
+
+
+Computational biology: costly comparisons with expensive simulations that we run on very large sets 
+of genomic data, but perhaps our vector only holds a small, unique, numeric ID for each of those 
+sequences, so the swaps are actually not costly at all.
+
+Student records: low-cost comparisons between unique, numeric student IDs, but perhaps we have a ton 
+of data associated with each student record, and so the write operations are someone intensive 
+compared to our comparison operations.
+
+Other Trade-offs
+
+1. Consistency vs. ultra-fast performance in a limited set of special cases.
+
+    If you know you're working on an application where you know that you often encounter special cases that 
+    trigger a particular algorithm's best-case runtime, you might want to select that algorithm over other 
+    candidates. For example, if you're working on an application where the vectors you receive are usually 
+    sorted already, you might want to use insertion sort over selection sort to capitalize on 
+    insertion sort's best-case runtime of O(n).
+
+    If you're working on an application where runtime predictability is key, or where you need to stay under 
+    a particular runtime for a certain operation, you might choose an algorithm whose runtime is very consistent 
+    over one that has an amazing best-case runtime in special cases but exceeds your runtime limits in others.
+
+2. Ease of coding and debugging vs. performance.
+
+    Do you need to quickly code up a proof-of-concept that gets a task done before a meeting with your research advisor? 
+    You might choose an algorithm that is more straightforward to implement and whose logic is really easy to follow, 
+    rather than trying to code up a slightly faster algorithm that is really tricky and hard to understand.
+
+    Do you want to hyper-optimize a piece of code because you're working on an application that needs a particular task 
+    to be accomplished as quickly as possible? It might be worth it to spend time implementing and testing a really 
+    complicated algorithm if that leads to runtime gains compared to an algorithm that would have been easier to implement but slower to run.
