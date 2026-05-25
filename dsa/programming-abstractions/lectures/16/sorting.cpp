@@ -17,7 +17,7 @@ using namespace std;
 
 
 // Creates and returns a vector of n random integers on the range 1 through 1,000,000.
-Vector<int> createRandoVector(int n)
+Vector<int> createRandomVector(int n)
 {
     Vector<int> v;
 
@@ -168,7 +168,7 @@ PROVIDED_TEST("selection sort runtime")
 
     for (int i = 0; i < numRuns; i++)
     {
-        Vector<int> v = createRandoVector(n);
+        Vector<int> v = createRandomVector(n);
         TIME_OPERATION(v.size(), selectionSort(v));
         EXPECT(isSorted(v));
     }
@@ -181,7 +181,7 @@ PROVIDED_TEST("insertion sort runtime")
 
     for (int i = 0; i < numRuns; i++)
     {
-        Vector<int> v = createRandoVector(n);
+        Vector<int> v = createRandomVector(n);
         TIME_OPERATION(v.size(), insertionSort(v));
         EXPECT(isSorted(v));
     }
