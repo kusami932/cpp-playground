@@ -75,3 +75,23 @@ int main()
 
     return 0;
 }
+
+/*
+Note that if someone asked what the runtime is for insertion at the tail of a linked list, 
+a precise answer would be to say, "It depends. If we maintain a tail pointer, 
+we can do that in O(1) time. If not, it takes O(n) time."
+
+Note that deletion at the tail of a linked list is O(n), even if we maintain a pointer to the 
+tail of the list. With a tail pointer, we could certainly delete the dynamically allocated tail 
+node in O(1) time, but we would then have to move the tail pointer back by one node in order to 
+keep that pointer current -- and we can't do that in a traditional linked list. We have to start 
+at the beginning of the list and loop forward until we find that next-to-last node, which will take O(n) time.
+
+
+	    insertion	               deletion
+
+head	    O(1)	                O(1)
+
+tail	O(1) if tail pointer    O(1) if tail pointer and doubly-linked
+        O(n) otherwise	         O(n) otherwise
+*/
