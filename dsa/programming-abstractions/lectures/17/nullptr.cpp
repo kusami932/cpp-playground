@@ -25,3 +25,19 @@ int main()
 
     return 0;
 }
+
+/*
+
+Dereferencing a null pointer will cause a segmentation fault
+
+*** STANFORD C++ LIBRARY
+*** The LinkedLists program has terminated unexpectedly (crashed)
+*** A segmentation fault (SIGSEGV) occurred during program execution
+
+    This error indicates your program attempted to dereference a pointer
+    to an invalid memory address (possibly out of bounds, deallocated, nullptr, ...)
+
+*** To get more information about a program crash,
+*** run your program again under the debugger.
+
+*/
