@@ -22,3 +22,39 @@ struct Node
     }
 };
 
+/*
+Keep in mind that when writing linked list manipulation functions, we need to be careful
+not to dereference null pointers. Along those lines, it's always good to check what your 
+linked list functions will do if they receive an empty list or a list with a single node.
+*/
+
+void headInsert(Node *&head, int data)
+{
+    Node *newHead = new Node(data);
+    newHead->next = head;
+    head = newHead;
+}
+
+
+int offWithItsHead(Node *&head)
+{
+    if (head == nullptr)
+    {
+        error("Atempting to remove from empty list in offWithItsHead()!");
+    }
+
+    // Hold onto this value so we can return it.
+    int retrieval = head->data;
+
+    // Hold onto the old head's address so we can delete it after moving the head
+    // pointer forward.
+    Node *oldHead = head;
+
+    // Move head pointer to next node in list. If there's no other node, this falls
+    // off the end of the list and becomes nullptr, which is exactly what we want.
+    head = head->next;
+    
+    // Now delete the old head node and return the value removed from the list.
+    delete oldHead;
+    return retrieval;
+}
