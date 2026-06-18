@@ -1,1 +1,4 @@
+Objective: Prepare a CS 61 environment and get familiar with the terminal.
+
 awesome
+

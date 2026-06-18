@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/jwlee0516/Desktop/cpp-playground/cs61/ps/pset0/output/hellokitty'
+relocations:     []
+...
